@@ -24,6 +24,10 @@ export class ShoppinglistComponent implements OnInit {
     this.ingredients.push(ingredient)
   }
 
+  onEditIngredient(index: number) {
+    this.shoppingService.startedEditing.next(index);
+  }
+
   ngOnDestroy() {
     this.isChangeSub.unsubscribe();
   }
