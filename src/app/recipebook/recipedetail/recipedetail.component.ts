@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipelist/recipe.model';
 import { ShoppingService } from 'src/app/shoppinglist/shopping.service';
 import { Ingredient } from 'src/app/shared/ingredient.model';
@@ -10,7 +10,7 @@ import { RecipeService } from '../recipelist/recipe.service';
   templateUrl: './recipedetail.component.html',
   styleUrls: ['./recipedetail.component.scss']
 })
-export class RecipedetailComponent implements OnInit {
+export class RecipedetailComponent implements OnInit{
   recipe: Recipe;
   id: number;
   constructor(private shoppingService: ShoppingService,
@@ -32,4 +32,10 @@ export class RecipedetailComponent implements OnInit {
   addToCart = (ingredients: Ingredient[]) => {
     this.shoppingService.addIngredientsToCart(ingredients);
   }
+
+  onDeleteRecipe = () => {
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['../'], {relativeTo: this.route})
+  }
+
 }

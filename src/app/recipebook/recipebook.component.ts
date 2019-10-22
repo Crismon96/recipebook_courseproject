@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from './recipelist/recipe.service';
-import { Recipe } from './recipelist/recipe.model';
-import { ActivatedRoute } from '@angular/router';
+import { Recipe } from './recipelist/recipe.model';import { RecipeService } from './recipelist/recipe.service';
+;
 
 @Component({
   selector: 'app-recipebook',
@@ -10,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipebookComponent implements OnInit {
   selectedRecipe: Recipe;
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
 

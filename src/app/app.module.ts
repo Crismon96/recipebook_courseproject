@@ -13,6 +13,7 @@ import { RecipedetailComponent } from './recipebook/recipedetail/recipedetail.co
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipesStartComponent } from './recipebook/recipes-start/recipes-start.component';
 import { RecipeEditComponent } from './recipebook/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipebook/recipelist/recipe.service';
 
 @NgModule({
   declarations: [
