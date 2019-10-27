@@ -20,6 +20,11 @@ export class RecipeService {
 
   constructor() { }
 
+  putRecipes(fetchedRecipes: Recipe[]) {
+    this.recipes = fetchedRecipes;
+    this.recipesChanged.next(this.recipes.slice())
+  }
+
   getRecipes() {
     return this.recipes.slice();
   }
